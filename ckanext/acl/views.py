@@ -29,7 +29,7 @@ def manage_permissions():
     username = tk.request.args.get("username", "")
     data = tk.request.form
     if "save" in data:
-        new_perm = data.getall("perm")
+        new_perm = data.get("perm")
         username = data.get("username")
         data_dict = {"username": username, "perm": new_perm}
         try:
